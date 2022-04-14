@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="imgs/LOGO.png" type="image/icon type">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+
+    <header>
+        <span><a href="Index.html">MemeGen</a></span>
+        <ul>
+            <li>Gallery</li>
+            <li>About</li>
+        </ul>
+    </header>
+
+    <section class="gallery"></section>
+
+    <section class="editor">
+        <div class="editorOp">
+            <div><input type="text" name="memeText" placeholder="Enter Text" oninput="setText()"></div>
+            <div>
+                <img src="ICONS/UP-DOWN.png" onclick="onSwitchLine(event)">
+                <img onclick="addLine()" src="ICONS/add.png">
+                <img onclick="removeLine()" src="ICONS/trash.png">
+            </div>
+            <div>
+                <img src="ICONS/increase font - icon.png" onclick="OnIncrease()">
+                <img onclick="OnDecrease()" src="ICONS/decrease font - icon.png">
+                <img onclick="onLeft()" src="ICONS/align-to-left.png">
+                <img onclick="onCenter()" src="ICONS/center-text-alignment.png">
+                <img onclick="onRight()" src="ICONS/align-to-right.png">
+            </div>
+            <div>
+                <select oninput="changeFont()" id="font">
+                    <option value="Impact" selected>Impact</option>
+                    <option value="Ariel">Ariel</option>
+                    <option value="serif">serif</option>
+                    <option value="fantasy">fantasy</option>
+                </select>
+                <input type="color" name="colorText" value="#ffffff">
+                <img onclick="upText()" src="ICONS/up.png" alt="">
+                <img onclick="downText()" src="ICONS/down.png" alt="">
+            </div>
+            <div>
+                <a onclick="downloadCanvas(this)" href="#" download="">Download</a>
+            </div>
+        </div>
+        <div><canvas tabindex="1" id="canvas" height="400" width="400"></canvas></div>
+    </section>
+
+    <footer>
+        <h1>MemeGen</h1>
+        <h5>all rights reserved 2022</h5>
+    </footer>
+
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
